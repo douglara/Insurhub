@@ -1,11 +1,18 @@
 {
   "name": "insurhub-app",
   "private": true,
+  "scripts": {
+    "install-theme": "yarn --cwd vendor/theme/stisla install",
+    "build-theme": "yarn --cwd vendor/theme/stisla dist",
+    "build": "yarn install ; yarn install-theme",
+    "heroku-prebuild": "yarn build"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.0",
+    "expose-loader": "^3.0.0",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
