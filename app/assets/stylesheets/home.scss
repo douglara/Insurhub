@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.form-inline .form-control {
+ @charset "UTF-8";
+
+.body {
+  background-color: black;
+}
+
+ .form-inline .form-control {
   background-color: #fff;
   border-color: transparent;
   padding-left: 20px;

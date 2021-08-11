@@ -10,6 +10,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application' %>
     <link rel="stylesheet" href="assets/stisla/node_modules/@fortawesome/fontawesome-free/css/all">
+    <%= stylesheet_link_tag "#{controller_name}", media: 'all', 'data-turbo-track': 'reload' rescue nil %>
     <%= javascript_pack_tag 'application', defer: true %>
 
     <%= yield :stylesheets %>
