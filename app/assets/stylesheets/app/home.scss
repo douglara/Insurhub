@@ -1,3 +1,90 @@
 // Place all the styles related to the app/home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form-inline .form-control {
+  background-color: #fff;
+  border-color: transparent;
+  padding-left: 20px;
+  padding-right: 0;
+  margin-right: -6px;
+  min-height: 46px;
+  min-width: 300px;
+  font-weight: 500;
+  border-radius: 3px 0 0 3px;
+  transition: all 1s; }
+.form-inline .form-control:focus,
+.form-inline .form-control:focus + .btn {
+    position: relative;
+    z-index: 9001; }
+.form-inline .form-control:focus + .btn + .search-backdrop {
+    opacity: .6;
+    visibility: visible; }
+.form-inline .form-control:focus + .btn + .search-backdrop + .search-result {
+    opacity: 1;
+    visibility: visible;
+    top: 80px; }
+.form-inline .btn {
+  border-radius: 0 3px 3px 0;
+  background-color: #fff;
+  padding: 9px 15px 9px 15px;
+  border-color: transparent; }
+.form-inline .search-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9000;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s; }
+.form-inline .search-result {
+  position: absolute;
+  z-index: 9002;
+  top: 100px;
+  background-color: #fff;
+  border-radius: 3px;
+  width: 450px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s; }
+.form-inline .search-result:before {
+    position: absolute;
+    top: -26px;
+    left: 34px;
+    content: '\f0d8';
+    font-weight: 600;
+    font-family: 'Font Awesome 5 Free';
+    color: #fff;
+    font-size: 30px; }
+.form-inline .search-result .search-header {
+    padding: 13px 18px 2px 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+    font-size: 10px;
+    color: #bcc1c6; }
+.form-inline .search-result .search-item {
+    display: flex; }
+.form-inline .search-result .search-item a {
+      display: block;
+      padding: 13px 18px;
+      text-decoration: none;
+      color: #34395e;
+      font-weight: 600;
+      display: flex;
+      align-items: center; }
+ .form-inline .search-result .search-item a:hover {
+  background-color: #f1f3fe; }
+.form-inline .search-result .search-item a:not(.search-close) {
+  width: 100%; }
+.form-inline .search-result .search-item a i {
+  margin-left: 0 !important; }
+.form-inline .search-result .search-item .search-icon {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%; }
