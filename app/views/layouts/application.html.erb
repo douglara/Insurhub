@@ -9,8 +9,9 @@
     <%= csp_meta_tag %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application' %>
-    <link rel="stylesheet" href="assets/stisla/node_modules/@fortawesome/fontawesome-free/css/all">
-    <%= stylesheet_link_tag "#{controller_name}", media: 'all', 'data-turbo-track': 'reload' rescue nil %>
+    <link rel="stylesheet" href="/assets/stisla/node_modules/@fortawesome/fontawesome-free/css/all">
+    <link rel="stylesheet" href="/assets/stisla/node_modules/izitoast/dist/css/iziToast.min.css">
+    <%= stylesheet_link_tag "#{controller_name}", media: 'all' rescue nil %>
     <%= javascript_pack_tag 'application', defer: true %>
 
     <%= yield :stylesheets %>
@@ -28,5 +29,35 @@
         </div>
       </footer>
     </div>
+    <script src="/assets/stisla/node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/stisla/node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/assets/stisla/node_modules/izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        <% flash.each do |key, value| %>
+          <% unless value.blank? %>
+
+            switch ('<%= key %>') {
+              case 'notice':
+                iziToast.success({
+                  title: 'Success!',
+                  message: '<%= value %>',
+                  position: 'topRight'
+                })
+                break
+              case 'error':
+              case 'alert':
+                iziToast.error({
+                  title: 'Error',
+                  message: '<%= value %>',
+                  position: 'topRight'
+                })
+                break
+            }
+          <% end %>
+        <% end %>
+      })
+    </script>
   </body>
 </html>
