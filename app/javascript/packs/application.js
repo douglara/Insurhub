@@ -11,7 +11,7 @@ Rails.start()
 ActiveStorage.start()
 
 // plugins
-require("@stisla/node_modules/popper.js/dist/popper.js")
-require("@stisla/node_modules/bootstrap/dist/js/bootstrap")
-require('@stisla/assets/js/stisla')
-require('@stisla/assets/js/scripts')
+// require("@stisla/node_modules/popper.js/dist/popper.js")
+// require("@stisla/node_modules/bootstrap/dist/js/bootstrap")
+// require('@stisla/assets/js/stisla')
+// require('@stisla/assets/js/scripts')

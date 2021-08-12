@@ -26,6 +26,12 @@ gem 'jbuilder', '~> 2.7'
 # Authentication
 gem 'devise'
 
+# Random images
+gem 'unsplash'
+
+# Search
+gem 'ransack'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

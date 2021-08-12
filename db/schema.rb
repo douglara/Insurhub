@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_11_002849) do
+ActiveRecord::Schema.define(version: 2021_08_12_023827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "insurance_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "insurance_programs", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "insurance_category_id", null: false
+    t.string "link_url"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["insurance_category_id"], name: "index_insurance_programs_on_insurance_category_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "full_name", default: "", null: false
@@ -28,4 +46,5 @@ ActiveRecord::Schema.define(version: 2021_08_11_002849) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "insurance_programs", "insurance_categories"
 end

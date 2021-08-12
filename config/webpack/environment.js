@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const path = require('path')
 
 // Config
-environment.config.merge(require('./config/resolve'))
+//environment.config.merge(require('./config/resolve'))
 
 environment.loaders.append('expose', {
     test: require.resolve('jquery', {

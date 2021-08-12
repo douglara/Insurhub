@@ -1,0 +1,70 @@
+<div class="main-content">
+  <div clas="row" style="padding-top: 20px;">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-lg-8">
+          <article class="article article-style-c">
+            <div class="article-header">
+              <div class="article-image" data-background="<%= @category_phone_url %>" style="background-image: url(&quot;<%= @category_phone_url %>&quot;);">
+              </div>
+            </div>
+            <div class="article-details">
+              <div class="article-title">
+                <h2><%= @insurance_program.name %></h2>
+              </div>
+              <p> <%= @insurance_program.description.gsub("\n", "<br>").html_safe %> </p>
+              <div class="tickets-list">
+                <%= link_to(@insurance_program.link_url, class:'ticket-item ticket-more', target: :_blank) do %>
+                  Learn more <i class="fas fa-chevron-right"></i>
+                <% end %>
+              </div>
+              <div class="article-user">
+                <p> Há <%= time_ago_in_words @insurance_program.created_at %> </p>
+                <%= image_tag "/assets/stisla/assets/img/avatar/avatar-1.png" %>
+                <div class="article-user-details">
+                  <div class="user-detail-name">
+                    <a>InsurHub</a>
+                  </div>
+                  <div class="text-job">Publicou</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4">
+          <div class="card gradient-bottom">
+            <div class="card-header">
+              <h4>About company</h4>
+            </div>
+            <div class="card-body">
+              <img alt="image" src="<%= @insurance_program.image_url %>" class="profile-widget-picture company-picture pb-4">
+
+              <div class="profile-widget-description pb-0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.</p>
+              </div>
+              <div class="card-footer text-center pt-0">
+                <div class="font-weight-bold mb-2 text-small">Follow <%= @insurance_program.name %> On</div>
+                <a href="#" class="btn mr-1 btn-facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="btn mr-1 btn-twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="btn mr-1 btn-github">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="btn mr-1 btn-instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

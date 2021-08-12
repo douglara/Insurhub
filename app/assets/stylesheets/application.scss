@@ -7,3 +7,17 @@
 .navbar-bg {
   height: 80px;
 }
+
+.home-images {
+  background-size: contain !important;
+  transform: scale(0.8,0.8) !important;
+  background-color: unset !important;
+}
+
+.company-picture {
+  max-width: 100px;
+}
+
+.not-found {
+  font-size: 200px;
+}
