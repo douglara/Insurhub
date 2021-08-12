@@ -35,7 +35,7 @@ class Searchbar extends Component {
 
     return (
       <div>
-        <input ref={ (input) => { this.searchBar = input } } value={ this.state.term } onChange={ this.getAutoCompleteResults.bind(this) } type='search' placeholder='What type of insurance you need?' arial-label="What type of insurance you need?" className="form-control" />
+        <input name="search-bar-input" ref={ (input) => { this.searchBar = input } } value={ this.state.term } onChange={ this.getAutoCompleteResults.bind(this) } type='search' placeholder='What type of insurance you need?' arial-label="What type of insurance you need?" className="form-control" />
         <button className="btn" type="submit"><i className="fas fa-search"></i></button>
         <div className="search-backdrop"></div>
         
